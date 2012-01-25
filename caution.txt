@@ -1,0 +1,1 @@
+The program needs very long to load and may freeze the system temporarily on exit.

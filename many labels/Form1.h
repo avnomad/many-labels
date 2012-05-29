@@ -1,3 +1,21 @@
+//	Copyright (C) 2008, 2012 Vaptistis Anogeianakis <el05208@mail.ntua.gr>
+/*
+ *	This file is part of many labels.
+ *
+ *	many labels is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	many labels is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *
+ *	You should have received a copy of the GNU General Public License
+ *	along with many labels.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #pragma once
 
 
@@ -41,15 +59,6 @@ namespace ManyLabels {
 				delete components;
 			}
 		}
-
-	protected: 
-
-	protected: 
-
-
-	protected: 
-
-	protected: 
 
 	private:
 		/// <summary>
@@ -105,13 +114,13 @@ namespace ManyLabels {
 						 p->Top = y*(height+2) + 2;
 						 p->MouseEnter += gcnew System::EventHandler(this, &Form1::label_MouseEnter);
 						 Form1::Controls->Add(p);
-					 }
+					 } // end for
+			 } // end handler Form1_Load
 
-			 }
 	private: System::Void Form1_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
 				 if(e->KeyChar == '\033')
 					 exit(0);
-			 }
+			 } // end handler Form1_KeyPress
 
 	private: System::Void label_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
 				 char *p;
@@ -119,8 +128,7 @@ namespace ManyLabels {
 				 static_cast<System::Windows::Forms::Label ^>(sender)->Text = "";
 				 static_cast<System::Windows::Forms::Label ^>(sender)->Text += atoi(p)+1;
 				 System::Runtime::InteropServices::Marshal::FreeHGlobal(IntPtr(p));				 
-			 }
+			 } // end handler label_MouseEnter
 
-};
-}
-
+}; // end ref class Form1
+} // end namespace ManyLabels
